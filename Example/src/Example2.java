@@ -3,41 +3,60 @@ import java.util.Scanner;
 public class Example2 {
 
 	public static void main(String[] args) {
-/*
- ì‘ìš©ë¬¸ì œ2
- ì‚¬ìš©ìžê°€ ìž…ë ¥í•œ ìˆ«ìžì— ë§žì¶°ì„œ êµ¬êµ¬ë‹¨ì´ ìž‘ë™ë˜ë©°, êµ¬êµ¬ë‹¨ ê²°ê³¼ë¥¼ ê³„ì‚°í•˜ì—¬ ì§ìˆ˜ì¸ì§€ í™€ìˆ˜ì¸ì§€ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤.
- 
-  "êµ¬êµ¬ë‹¨ì— ëŒ€í•œ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”?" ë¼ê³  ë©”ì„¸ì§€ ì¶œë ¥ë˜ë©´ ìˆ«ìžìž…ë ¥. 
-  ìž…ë ¥ëœ í•´ë‹¹ ìˆ«ìžì— ë§žì¶°ì„œ ëª¨ë“  ê²°ê³¼ë¥¼ ë”í•˜ë©°, ë”í•œ ê°’ì— ë”°ë¼ ì§ìˆ˜ì¸ì§€ í™€ìˆ˜ì¸ì§€ë¥¼ ì¶œë ¥í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
-  ë‹¨, í•´ë‹¹ ë°˜ë³µë¬¸ì€ for~do whileë¬¸ê¹Œì§€ í•œê°€ì§€ë¥¼ ì„ íƒí•´ì„œ ìž‘ì„±í•˜ì‹œì˜¤.
-  
-  ì¡°ê±´ë¬¸ì´ ë°˜ë³µë¬¸ ë°–ì— ìžˆì–´ì•¼í•¨.
-*/
+		/*
+		 * ÀÀ¿ë¹®Á¦2 »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ýÀÚ¿¡ ¸ÂÃç¼­ ±¸±¸´ÜÀÌ ÀÛµ¿µÇ¸ç, ±¸±¸´Ü °á°ú¸¦ °è»êÇÏ¿© Â¦¼öÀÎÁö È¦¼öÀÎÁö¸¦ Ãâ·ÂÇÏ½Ã¿À.
+		 * 
+		 * "±¸±¸´Ü¿¡ ´ëÇÑ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä?" ¶ó°í ¸Þ¼¼Áö Ãâ·ÂµÇ¸é ¼ýÀÚÀÔ·Â. ÀÔ·ÂµÈ ÇØ´ç ¼ýÀÚ¿¡ ¸ÂÃç¼­ ¸ðµç °á°ú¸¦ ´õÇÏ¸ç, ´õÇÑ °ª¿¡ µû¶ó
+		 * Â¦¼öÀÎÁö È¦¼öÀÎÁö¸¦ Ãâ·ÂÇÏ½Ã¸é µË´Ï´Ù. ´Ü, ÇØ´ç ¹Ýº¹¹®Àº for~do while¹®±îÁö ÇÑ°¡Áö¸¦ ¼±ÅÃÇØ¼­ ÀÛ¼ºÇÏ½Ã¿À.
+		 * 
+		 * Á¶°Ç¹®ÀÌ ¹Ýº¹¹® ¹Û¿¡ ÀÖ¾î¾ßÇÔ.
+		 */
 
-		Scanner sc = new Scanner(System.in); // ìž…ë ¥ì—”ì§„ í˜¸ì¶œ
-		
-		System.out.println("êµ¬êµ¬ë‹¨ì— ëŒ€í•œ ìˆ«ìžë¥¼ ìž…ë ¥í•˜ì„¸ìš”?");
-		
-		int user;//ì‚¬ìš©ìž ìž…ë ¥ê°’.
-		user=sc.nextInt();
-				
-		int aa; //ë°˜ë³µë¬¸ì— ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜
-		
-		int total=0; // ì—°ì‚°ì— ì‚¬ìš©í•  ë³€ìˆ˜
-		for(aa=1; aa<=9; aa++) { 
-			total+=(user*aa); 
-			}
-		System.out.println(total);
-		
-	if(total%2==0) {
-		System.out.println("ê²°ê³¼ê°’ì€ ì§ìˆ˜ ìž…ë‹ˆë‹¤.");
-				
-	}else {
-		System.out.println("ê²°ê³¼ê°’ì€ í™€ìˆ˜ ìž…ë‹ˆë‹¤.");
-	}
+		/*Scanner sc = new Scanner(System.in); // ÀÔ·Â¿£Áø È£Ãâ
+
+		System.out.println("±¸±¸´Ü¿¡ ´ëÇÑ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä?");
+
+		int user;// »ç¿ëÀÚ ÀÔ·Â°ª ¹ÞÀ» º¯¼ö.
+		user = sc.nextInt(); // »ç¿ëÀÚ ÀÔ·Â°ª.
 	
-	sc.close();	
+		int aa; // ¹Ýº¹¹®¿¡ »ç¿ëÇÏ´Â º¯¼ö
+
+		int total = 0; // ¿¬»ê¿¡ »ç¿ëÇÒ º¯¼ö
+		for (aa = 1; aa <= 9; aa++) { // ¹Ýº¹Á¶°Ç
+			total += (user * aa); //»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ°ª¿¡ ´ëÇÑ ±¸±¸´Ü ¿¬»ê ÁøÇà
+		}
+		System.out.println(user+"´ÜÀÇ ÃÑÇÕ: " +total); // ¹Ýº¹¹® Á¾·á ÈÄ total¿¡ ÀúÀåµÈ ¿¬»êÀÇ ÃÖÁ¾ ÇÕ°è°ª Ãâ·Â
+
+		if (total % 2 == 0) { //ÃÖÁ¾ ÇÕ°è°ªÀÇ ÃÑ ÇÕÀÌ Â¦¼öÀÎ °æ¿ì
+			System.out.println("°á°ú°ªÀº Â¦¼ö ÀÔ´Ï´Ù.");
+
+		} else { //ÃÖÁ¾ ÇÕ°è°ªÀÇ ÃÑ ÇÕÀÌ È¦¼öÀÎ °æ¿ì
+			System.out.println("°á°ú°ªÀº È¦¼ö ÀÔ´Ï´Ù.");
+		}
+		sc.close();*/
 		
+//		Ç®ÀÌ. do~while¹®
+		Scanner sc = new Scanner(System.in);
+		String msg2; // ¸Þ¼¼Áö ±¸ºÐ
+		String msg = "±¸±¸´Ü¿¡ ´ëÇÑ ¼ýÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä?";
+		System.out.println(msg);
+		int user = sc.nextInt();
+		int f=1;
+		int total = 0;
+		do {
+			total=total+(user*f); 
+			//total+=user*f;
+			f++;
+		}while(f<10);
+		//System.out.println(total);
+		if(total%2==0) {
+			msg2="Â¦¼ö";
+		}
+		else {
+			msg2="È¦¼ö";
+		}
+		System.out.println("°á°ú°ªÀº "+msg2+" ÀÔ´Ï´Ù.");
+		sc.close();
 	}
 
 }
