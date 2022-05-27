@@ -36,7 +36,7 @@ public class Example2 {
 		System.out.println("결과값은 홀수 입니다.");
 	}
 	
-		
+	sc.close();	
 		
 	}
 
