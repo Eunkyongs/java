@@ -3,64 +3,58 @@ import java.util.Scanner;
 public class Example8 {
 
 	public static void main(String[] args) {
-		/* ���빮�� 8: ����� �н������ a1234�Դϴ�. ����ڰ� �н����带 �Է��մϴ�. �� 3ȸ�̻� ���н� ������ ���� ��µǵ��� �մϴ�.
-		 "�н����� Ƚ�� �������� ����� ������ �湮�ϼž� �մϴ�." ��, �н����尡 ���� ��� "�α��� �Ǿ����ϴ�." ��� ��µǾ�� �մϴ�. */
+		/* 응용문제 8: 사용자 패스워드는 a1234입니다. 사용자가 패스워드를 입력합니다. 단 3회이상 실패시 다음과 같이 출력되도록 합니다.
+		 "패스워드 횟수 제한으로 가까운 지점에 방문하셔야 합니다." 단, 패스워드가 맞을 경우 "로그인 되었습니다." 라고 출력되어야 합니다. */
 			
-/*		//Ǯ��
+/*		//풀이
 		final String pw = "a1234";
 		int c=3;
 		Scanner sc = new Scanner(System.in);
 		int w =0;
-		String msg = "�н����带 �Է��� �ּ���:";
+		String msg = "패스워드를 입력해 주세요:";
 		while (w<3) {
 			System.out.println(msg);
 			String userpw = sc.next();
 			if(pw.equals(userpw)) {
-				System.out.println("�α��� �Ǿ����ϴ�.");
+				System.out.println("로그인 되었습니다.");
 				break;
 			}else {
-				msg="�ùٸ� �н����带 �־��ּ���.";
+				msg="올바른 패스워드를 넣어주세요.";
 				c--;
 				if(c==0) {
-				System.out.println("�н����� Ƚ�� �������� ����� ������ �湮�ϼž� �մϴ�.");
+				System.out.println("패스워드 횟수 제한으로 가까운 지점에 방문하셔야 합니다.");
 				}
 			}
 			w++;
 		}
 */		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		String pw = "a1234"; //pw��		
+		String pw = "a1234"; //pw값		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("�н����带 �Է��ϼ���. : ");
+		System.out.println("패스워드를 입력하세요. : ");
 		
-		//do~while�� ���
+		
 		int dw=1;
+		int c=3;
+		
+		//do~while문 사용
 		do {
-			String user = scan.next();//����� �Է�
+			String user = scan.next();//사용자 입력
+			
 			if(user.equals(pw)) {
-				System.out.println("�α��� �Ǿ����ϴ�.");
+				System.out.println("로그인 되었습니다.");
 				break;
 			}else {
-				System.out.println("�н����尡 Ʋ�Ƚ��ϴ�.");
-				if(dw==0){
+				System.out.println("패스워드가 틀렸습니다.");
 				
-				System.out.println("�н����� Ƚ�� �������� ����� ������ �湮�ϼž� �մϴ�.");
+				c--;
+				
+				if(dw==0){
+				System.out.println("패스워드 횟수 제한으로 가까운 지점에 방문하셔야 합니다.");
 				}
 			}
 			dw++;
-			
-			
-			
-		}while(dw<=3);
+		}while(dw<4);
 
 		
 		
@@ -69,43 +63,52 @@ public class Example8 {
 		
 		
 		
-		
-		//for�� ���
-		/*		int f; // �ݺ�����뺯��
-		for (f = 1; f <= 3; f++) { //3������ �Է�
+		//for문 사용
+		int f; // 반복문사용변수
+		for (f = 1; f <= 3; f++) { //3번까지 입력
 			
-			String user = scan.next();//����� �Է�
+			String user = scan.next();//사용자 입력
 			
-			if (user.equals(pw)) {//���ǹ�. 
-				System.out.println("�α��� �Ǿ����ϴ�."); //�н����尪�� ������� ��µ� ����
-				break; //�ݺ��� ���������Ҷ� ����մϴ�.
+			if (user.equals(pw)) {//조건문. 
+				System.out.println("로그인 되었습니다."); //패스워드값이 맞을경우 출력될 내용
+				break; //반복문 강제종료할때 사용합니다.
 			}	
 			else {
-				System.out.println("�н����尡 Ʋ�Ƚ��ϴ�.");
+				System.out.println("패스워드가 틀렸습니다.");
+				c--;
 				
+				if(c==0) {
+				
+				// 3번이상 틀렸을때
+				System.out.println("패스워드 횟수 제한으로 가까운 지점에 방문하셔야 합니다.");
+				}
 			}
-			 // 3���̻� Ʋ������
-			System.out.println("�н����� Ƚ�� �������� ����� ������ �湮�ϼž� �մϴ�.");
+			 
 		}
-*/		
+	
 
 		
 
 
-		//while�� ���
-/*		while(dw<=3) {
-			String user = scan.next();//����� �Է�
+		//while문 사용
+
+		while(dw<=3) {
+			String user = scan.next();//사용자 입력
 			
 			if(user.equals(pw)) {
-				System.out.println("�α��� �Ǿ����ϴ�.");
+				System.out.println("로그인 되었습니다.");
+				break;
 			}else { 
-				System.out.println("�н����� Ƚ�� �������� ����� ������ �湮�ϼž� �մϴ�."); // 3���̻� Ʋ������
+				System.out.println("올바른 패스워드를 넣어주세요.:");
+				c--;
+				if(c==0) {
+				System.out.println("패스워드 횟수 제한으로 가까운 지점에 방문하셔야 합니다."); // 3번이상 틀렸을때
 			}
-			
+			}
 			dw++;
 
 		}
-*/	
+	
 scan.close();
 
 	}
