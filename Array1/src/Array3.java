@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Array3 {
@@ -45,7 +46,57 @@ public class Array3 {
 		 해당 질문은 총 4번을 물어보게 됩니다. 
 		 단, "주문종료"라고 사용자가 입력시 그 즉시 주문은 종료되며, 주문내역을 출력하시면 됩니다.
 		  */
+		//집에가서 다른 반복문으로 돌려보기
+//		스캐너가 반복문 안에 들어가면 1바퀴만 반복돌아가고 멈춰버림
+//foreach 는 2차배열에선 사용불가
 		
+		
+		//선생님 코드
+		
+		String menus[] = {"햄버거","피자","치킨","커피"};
+		Scanner sc = new Scanner(System.in);
+		String user;
+		String user_menu [] = new String[4];
+		int ct = 0;
+		for(String f: menus) {
+			/* Scanner 가 반복문 안에 적용시 loop로 무조건 반복하지는 않음
+			  사용자가 입력할 때마다 반복문 범위만큼 출력하는 형태임
+			 */
+			System.out.println("메뉴를 선택해 주세요?:");
+			user = sc.next();
+			if(user.equals("주문종료")) {
+				break;
+			}else {
+				for(String ff : menus) {
+					if(user.equals(ff)) {
+						user_menu [ct] = ff;
+						ct++;
+					}
+				}
+			}
+		}
+		sc.close();
+		System.out.println("주문하신 메뉴는 다음과 같습니다."+Arrays.toString(user_menu));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
 		String food[]={"햄버거","피자","치킨","커피"} ;
 		
 		Scanner scan= new Scanner(System.in);
@@ -63,15 +114,13 @@ public class Array3 {
 				
 					System.out.println(order_total);
 					break;
-			
 				}
-				
 			}
-
-
 		}
 
 		scan.close();
+		*/
+		
 		
 	}
 
