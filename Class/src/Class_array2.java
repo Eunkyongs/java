@@ -44,7 +44,7 @@ class memorys{
 	public void rd() { // rd=random util 사용법
 		Random r = new Random(); //random 객체 생성 및 인스턴스 적용
 		int w = 0;
-		while(w<=5) {
+		while(w<5) {
 			System.out.println(r.nextInt(45)+1); // 0~9까지 r.nextInt를 사용.
 			w++;
 		}
