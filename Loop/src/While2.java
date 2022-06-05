@@ -32,7 +32,7 @@ public class While2 {
 		 3씩 더해짐 
 		 */
 		int w=1;
-		int total1=0;
+		int total=0;
 		while(w<8) {
 			total=w*num+1;
 			System.out.println(total);
