@@ -5,26 +5,30 @@ public class Test7 {
 	public static void main(String[] args) {
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("»ö»óÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä.[»¡°­,ÁÖÈ²,³ë¶û,ÃÊ·Ï]");
+		System.out.println("ìƒ‰ìƒì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.[ë¹¨ê°•,ì£¼í™©,ë…¸ë‘,ì´ˆë¡]");
 		String color = scan.next();
 		String Eng_color=null;
 		switch(color) {
 		
-		case "»¡°­"->{
-			Eng_color = color.replace("»¡°­", "red"); 
+		case "ë¹¨ê°•"->{
+			Eng_color = color.replace("ë¹¨ê°•", "red"); 
 		}
-		case"ÁÖÈ²"->{
-			
+		case"ì£¼í™©"->{
+			Eng_color = color.replace("ì£¼í™©", "orange");
 		}
-		case"³ë¶û"->{
-			
+		case"ë…¸ë‘"->{
+			Eng_color = color.replace("ë…¸ë‘", "yellow");
 		}
-		case"ÃÊ·Ï"->{
-			
+		case"ì´ˆë¡"->{
+			Eng_color = color.replace("ì´ˆë¡", "green");
+		}
+		default->{
+			Eng_color="í•´ë‹¹ ë‹¨ì–´ëŠ” ë²ˆì—­ì´ ë˜ì§€ ì•ŠìŠµë‹ˆë‹¤.";
 		}
 		}
+		System.out.println(Eng_color);
 		
-		
+		scan.close();
 		
 	}
 
