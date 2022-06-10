@@ -22,9 +22,14 @@ public class Example1 {
 	 
 	 */	
 		Example2 ex2 = new Example2();
-		
-		int pc_num =(int) (Math.random()*10+1); // Pc가 1~10까지의 숫자중 하나 랜덤선택 . *10하면 0~9까지 출력되니 *10+1
 		Scanner scan = new Scanner(System.in);
+		/*일반 random형식 (random double 자료형)*/
+//		int pc_num =(int)(Math.random()*10+1); // Pc가 1~10까지의 숫자중 하나 랜덤선택 . *10하면 0~9까지 출력되니 *10+1
+		
+		/*util 이용한 random*/
+		Random r = new Random();
+		int pc_num = r.nextInt(10)+1;
+		
 		int user_num =0; 
 		int w = 5;
 		while(w>0) { //스캐너 5번
@@ -32,7 +37,12 @@ public class Example1 {
 			user_num= scan.nextInt();
 			ex2.number(pc_num,user_num); //랜덤번호랑 사용자가 입력한 번호 보내기
 			String bb = ex2.result(); // 비교결과 리턴 받음
-			if(bb.equals("정답")) {  //비교결과 정답이면
+			
+			int check = bb.indexOf("정답"); //  indexOf :단어검색 (결과값 -1:없음, 0:있음)
+//			System.out.println(check); // indexOf 결과값 확인
+			
+//			if(bb.equals("정답")) {  //비교결과 정답이면
+			if(check == 0) { // 단어검색결과에 정답이라는 단어가 있으면
 				System.out.println(bb); // 비교결과 리턴값 출력
 				System.exit(0); // 종료시킴
 			}else {
@@ -41,6 +51,8 @@ public class Example1 {
 			w--;
 		}		
 		scan.close();
+		
+		
 	}
 
 }
