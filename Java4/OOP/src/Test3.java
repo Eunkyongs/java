@@ -23,7 +23,7 @@ public class Test3 {
 		int ea1 = data.length; //4
 		int ea2 = data[0].length; //4
 		
-		int f,ff;
+		int f;
 		for(f=0;f<ea1; f++) {
 			System.out.println(data[0][f]+" "+data[2][f]);
 		}
