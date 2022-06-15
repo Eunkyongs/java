@@ -2,18 +2,20 @@ import java.util.Arrays;
 
 public class Example1 {
 
-	public static void main(String[] args) { // ¿ÜºÎ Å¬·¡½º È£Ãâ¸¸ ÇÕ´Ï´Ù.
-		//abstract ÀÀ¿ë¹®Á¦
+	public static void main(String[] args) { // ì™¸ë¶€ í´ë˜ìŠ¤ í˜¸ì¶œë§Œ í•©ë‹ˆë‹¤.
+		//abstract ì‘ìš©ë¬¸ì œ
 		/*
-		 1Â÷¹è¿­°ªÀÌ ÀÖ½À´Ï´Ù. ÇØ´ç ¹è¿­°ªÀ» ¸ğµÎ ´õÇÑ °ªÀ» Ãâ·ÂÇÕ´Ï´Ù.
-		 ´Ü, abstract ±âº» void ÀÌ¸§Àº sender °¡Áö°í ÀÖ½À´Ï´Ù.
-		 ÃÖÁ¾ °ª Ãâ·ÂÀº sender¿¡¼­ Ãâ·Â µÇµµ·Ï ÇÕ´Ï´Ù.   
-		 ¹è¿­Àº abstract¿¡¼­ »ç¿ëÇÕ´Ï´Ù.  
-		 ¹è¿­ µ¥ÀÌÅÍ : 6,13,22,9,12,64,32,47,39
+		 1ì°¨ë°°ì—´ê°’ì´ ìˆìŠµë‹ˆë‹¤. í•´ë‹¹ ë°°ì—´ê°’ì„ ëª¨ë‘ ë”í•œ ê°’ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+		 ë‹¨, abstract ê¸°ë³¸ void ì´ë¦„ì€ sender ê°€ì§€ê³  ìˆìŠµë‹ˆë‹¤.
+		 ìµœì¢… ê°’ ì¶œë ¥ì€ senderì—ì„œ ì¶œë ¥ ë˜ë„ë¡ í•©ë‹ˆë‹¤.   
+		 ë°°ì—´ì€ abstractì—ì„œ ì‚¬ìš©í•©ë‹ˆë‹¤.  
+		 ë°°ì—´ ë°ì´í„° : 6,13,22,9,12,64,32,47,39
 		 */
 		
 		plus1 ps = new plus1();
 		ps.sender();
+		
+		arr1 ar = new arr1();
 	}
 
 }
@@ -36,5 +38,31 @@ class plus1 extends plus{
 		}
 	System.out.println(total);
 	
+	}
+}
+
+//ì„ ìƒë‹˜ ì½”ë“œ
+
+abstract class vdata{
+	public abstract void sender();
+}
+
+class arr1 extends vdata{
+	private int alldata[]; 
+	
+	public arr1() {
+		this.alldata = new int[] {6,13,22,9,12,64,32,47,39};
+		
+		this.sender();
+	}
+	@Override
+	public void sender() {
+		int w =0;
+		int total = 0;
+		while(w<this.alldata.length) {
+			total+=this.alldata[w];
+			w++;
+		}
+		System.out.println(total);
 	}
 }
