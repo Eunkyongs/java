@@ -1,4 +1,3 @@
-
 public class Test4 {
 
 	public static void main(String[] args) {
@@ -6,36 +5,37 @@ public class Test4 {
 //		b.name();
 //		b.name2();
 		
-		/*ÀÀ¿ë¹®Á¦ ¿ÜºÎ class¸¦ ÀÌ¿ëÇÏ¿© ÇØ´ç ¸Þ¼Òµå °ªÀ» Ãâ·ÂÇÕ´Ï´Ù.
-		 ¿ÜºÎ class¸í booksÀÌ¸ç, ¾È¿¡ ¸Þ¼Òµå´Â ÃÑ 3°³ÀÇ ¸Þ¼Òµå°¡ Á¸Àç ÇÕ´Ï´Ù.
-		 ¸Þ¼Òµå¸íÀº °¢°¢ book1, book2, book3À¸·Î ÀÌ·ç¾îÁ® ÀÖ½À´Ï´Ù.
-		 book1 È£Ãâ½Ã "book1¸Þ¼Òµå"¶ó°í Ãâ·Â
-		 book2 È£Ãâ½Ã "book2¸Þ¼Òµå"¶ó°í Ãâ·Â
-		 book3 È£Ãâ½Ã "book3¸Þ¼Òµå"¶ó°í Ãâ·Â
+		/*ì‘ìš©ë¬¸ì œ ì™¸ë¶€ classë¥¼ ì´ìš©í•˜ì—¬ í•´ë‹¹ ë©”ì†Œë“œ ê°’ì„ ì¶œë ¥í•©ë‹ˆë‹¤.
+		 ì™¸ë¶€ classëª… booksì´ë©°, ì•ˆì— ë©”ì†Œë“œëŠ” ì´ 3ê°œì˜ ë©”ì†Œë“œê°€ ì¡´ìž¬ í•©ë‹ˆë‹¤.
+		 ë©”ì†Œë“œëª…ì€ ê°ê° book1, book2, book3ìœ¼ë¡œ ì´ë£¨ì–´ì ¸ ìžˆìŠµë‹ˆë‹¤.
+		 book1 í˜¸ì¶œì‹œ "book1ë©”ì†Œë“œ"ë¼ê³  ì¶œë ¥
+		 book2 í˜¸ì¶œì‹œ "book2ë©”ì†Œë“œ"ë¼ê³  ì¶œë ¥
+		 book3 í˜¸ì¶œì‹œ "book3ë©”ì†Œë“œ"ë¼ê³  ì¶œë ¥
 		 */
 		
 		books bk =new books();
 		bk.book1(35);
-		bk.book2("¹ÙµÏÀÌ");
-		bk.book3("È«±æµ¿",40);
+		bk.book2("ë°”ë‘‘ì´");
+		bk.book3("í™ê¸¸ë™",40);
 //		System.out.println(bk.book4());
-		/*return¸Þ¼Òµå¿¡ ¼ýÀÚ 9¿Í 20À» ÀÎ¼ö°ªÀ¸·Î Àü´ÞÇÕ´Ï´Ù.
-		 ÇØ´ç µÎ°³ÀÇ °ªÀ» °öÇÏ¿© °á°ú°ªÀ» Ãâ·ÂÇÏ½Ã¿À.*/
+		/*returnë©”ì†Œë“œì— ìˆ«ìž 9ì™€ 20ì„ ì¸ìˆ˜ê°’ìœ¼ë¡œ ì „ë‹¬í•©ë‹ˆë‹¤.
+		 í•´ë‹¹ ë‘ê°œì˜ ê°’ì„ ê³±í•˜ì—¬ ê²°ê³¼ê°’ì„ ì¶œë ¥í•˜ì‹œì˜¤.*/
 		
-		int result = bk.book4(9,20); //booksÅ¬·¡½ºÀÇ book4¸Þ¼Òµå·Î 9,20ÀÌ¶ó´Â ÀÎ¼ö°ª º¸³½ ÈÄ ¸®ÅÏ ¹ÞÀ½ 
+		int result = bk.book4(9,20); //booksí´ëž˜ìŠ¤ì˜ book4ë©”ì†Œë“œë¡œ 9,20ì´ë¼ëŠ” ì¸ìˆ˜ê°’ ë³´ë‚¸ í›„ ë¦¬í„´ ë°›ìŒ 
 		System.out.println(result);
-		/*book5¹ø¿¡ ¼ýÀÚ¸¦ ÇÏ³ª ÀÎ¼ö°ªÀ¸·Î Àü´ÞÇÕ´Ï´Ù.
-		 ÇÏ³ªÀÇ ÀÎ¼ö°ªÀ» ¹ÞÀº book5¿¡¼­´Â ¹«Á¶°Ç 100,200À» ´õÇÑ °ª°ú ÀÎ¼ö°ªÀ» °öÇÏ¿© °á°ú°ªÀ» Ãâ·ÂÇÏ½Ã¿À
-		 ÀÎ¼ö°ª:4
+		/*book5ë²ˆì— ìˆ«ìžë¥¼ í•˜ë‚˜ ì¸ìˆ˜ê°’ìœ¼ë¡œ ì „ë‹¬í•©ë‹ˆë‹¤.
+		 í•˜ë‚˜ì˜ ì¸ìˆ˜ê°’ì„ ë°›ì€ book5ì—ì„œëŠ” ë¬´ì¡°ê±´ 100,200ì„ ë”í•œ ê°’ê³¼ ì¸ìˆ˜ê°’ì„ ê³±í•˜ì—¬ ê²°ê³¼ê°’ì„ ì¶œë ¥í•˜ì‹œì˜¤
+		 ì¸ìˆ˜ê°’:4
 		 (100+200)*4
-		 °á°ú:1200
+		 ê²°ê³¼:1200
 		 */
-		bk.book5(4);
+		int re = bk.book5(4);
+		System.out.println(re);
 	}
 
 }
 class books{
-	String zz ="Á¤´ä";
+	String zz ="ì •ë‹µ";
 	public int a1,a2;
 
 	public void book1(int z) {
@@ -48,13 +48,14 @@ class books{
 //		System.out.println(x+","+x1+this.zz);
 	}
 	public int book4(int k, int j) {
-//		String ka="È«±æµ¿"; // int ¸Þ¼Òµå ¾È¿¡´Â string ¾Æ¿¹ »ç¿ëÀ» ¸øÇÔ.¹Ý´ë°æ¿ìµµ µ¿ÀÏ. ¼±¾ðÇØµµ ¹ÝÈ¯À» ¸øÇØ ¿¡·¯³²
-		int dd = k*j; // ÀÎ¼ö°ª¹ÞÀº°Í °è»êµÈ °ªÀ» º¯¼ö¿¡ ÅÂ¿ö¼­ returnº¸³»¾ßÇÔ
-		return dd ; // °ªÀ» ¹ÝÈ¯¸¸ °¡´É! sysout Ãâ·Â ºÒ°¡
+//		String ka="í™ê¸¸ë™"; // int ë©”ì†Œë“œ ì•ˆì—ëŠ” string ì•„ì˜ˆ ì‚¬ìš©ì„ ëª»í•¨.ë°˜ëŒ€ê²½ìš°ë„ ë™ì¼. ì„ ì–¸í•´ë„ ë°˜í™˜ì„ ëª»í•´ ì—ëŸ¬ë‚¨
+		int dd = k*j; // ì¸ìˆ˜ê°’ë°›ì€ê²ƒ ê³„ì‚°ëœ ê°’ì„ ë³€ìˆ˜ì— íƒœì›Œì„œ returnë³´ë‚´ì•¼í•¨
+		return dd ; // ê°’ì„ ë°˜í™˜ë§Œ ê°€ëŠ¥! sysout ì¶œë ¥ ë¶ˆê°€
 	}
 
-	public void book5(int a1) {
-
+	public int book5(int a1) {
+		int gg = (100+200)*a1;
+		return gg;
 	}
 	
 }
@@ -62,7 +63,7 @@ class books{
 
 
 
-class loadbox{//class´Â ¹«Á¶°Ç method°¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.
+class loadbox{//classëŠ” ë¬´ì¡°ê±´ methodê°€ ìžˆì–´ì•¼ í•©ë‹ˆë‹¤.
 	
 	public void name() {
 		System.out.println("test");
