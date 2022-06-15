@@ -1,19 +1,23 @@
 package List1;
 
+import java.awt.geom.Area;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class list7 {
 
 	public static void main(String[] args) {
-		/*ÀÀ¿ë¹®Á¦ : 
-		 ArrayList ¶Ç´Â LinkedList µÑ Áß¿¡ ¿øÇÏ´Â ¸Ş¼Òµå¸¦ ±¸ÇöÇÏ½Ã¸é µË´Ï´Ù.
-		 2Â÷¹è¿­ ÇüÅÂÀÔ´Ï´Ù.
-		 ÇØ´ç µ¥ÀÌÅÍ °ªÀ» ¸ğµÎ ´õÇÏ¿© Â¦¼ö ÀÎÁö È¦¼ö ÀÎÁö¸¦ È®ÀÎÇÏ½Ã¿À.
+		/*ì‘ìš©ë¬¸ì œ : 
+		 ArrayList ë˜ëŠ” LinkedList ë‘˜ ì¤‘ì— ì›í•˜ëŠ” ë©”ì†Œë“œë¥¼ êµ¬í˜„í•˜ì‹œë©´ ë©ë‹ˆë‹¤.
+		 2ì°¨ë°°ì—´ í˜•íƒœì…ë‹ˆë‹¤.
+		 í•´ë‹¹ ë°ì´í„° ê°’ì„ ëª¨ë‘ ë”í•˜ì—¬ ì§ìˆ˜ ì¸ì§€ í™€ìˆ˜ ì¸ì§€ë¥¼ í™•ì¸í•˜ì‹œì˜¤.
 		 
 		 Integer data[][]={
 		 	{10,20,30,40,50,60,70},
 		 	{3,6,9,12,15,17,19}
 		 };
 		 
-		 °á°ú : ÃÑ ÇÕÀº 361ÀÌ°í È¦¼ö ÀÔ´Ï´Ù.
+		 ê²°ê³¼ : ì´ í•©ì€ 361ì´ê³  í™€ìˆ˜ ì…ë‹ˆë‹¤.
 		 */
 		
 		 Integer data[][]={
@@ -21,7 +25,22 @@ public class list7 {
 				 	{3,6,9,12,15,17,19}
 				 };
 		
-		
-	}
-
+		 ArrayList []ar = new ArrayList[2];
+		 int ea=0;
+		 int total =0;
+		 String msg="";
+		 for(int f=0; f<2;f++) {
+			 ar[f]=new ArrayList<Integer>();
+			 for(int ff =0; ff<7; ff++) {
+			 ar[f].add(data[f][ff]);
+			 total +=(Integer) ar[f].get(ff);
+			 }
+		 }
+		 if(total%2==0) {
+			 msg="ì§ìˆ˜ì…ë‹ˆë‹¤.";
+		 }else {
+			 msg="í™€ìˆ˜ì…ë‹ˆë‹¤.";
+		 }
+		 System.out.print("ì´ í•©ì€ "+total+"ì´ê³  "+msg);
+}
 }
