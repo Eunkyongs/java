@@ -1,4 +1,4 @@
-//ÀÎÁõ¹øÈ£¹ß¼Û ½Ã½ºÅÛ - awt6_abstract¿Í ¿¬°á
+//ì¸ì¦ë²ˆí˜¸ë°œì†¡ ì‹œìŠ¤í…œ - awt6_abstractì™€ ì—°ê²°
 public class awt6 {
 
 	public static void main(String[] args) {
@@ -10,34 +10,15 @@ public class awt6 {
 }
 
 class awt6_handle extends awt6_abstract{
-	private int vcnum; //·£´ı»ı¼ºµÈ ÀÎÁõ¹øÈ£ ³Ñ¾î¿Â°Í 
-	private int innum; // »ç¿ëÀÚÀÔ·ÂÀÎÁõ¹øÈ£
-	private int re ;
+	private int vcnum; //ëœë¤ìƒì„±ëœ ì¸ì¦ë²ˆí˜¸ ë„˜ì–´ì˜¨ê²ƒ 
 	@Override
 	public void numcheck(int n) { 
-		this.vcnum=n;//ÀÎÁõ¹øÈ£
-		
-	System.out.println(n);//ÀÎÁõ¹øÈ£ console¿¡ º¸ÀÌ°Ô
-		
+		this.vcnum=n;//ì¸ì¦ë²ˆí˜¸
+		System.out.println("ë°œì†¡ëœ ì¸ì¦ë²ˆí˜¸: "+n);//ì¸ì¦ë²ˆí˜¸ consoleì— ë³´ì´ê²Œ ì„¤ì •
 	}
-	
-	@Override
-	public void numcheck1(int n1) {
-		this.innum=n1; //»ç¿ëÀÚÀÔ·Â¹øÈ£
-		
-		if(this.innum == this.vcnum) {
-			this.re=0;
-			checkok();
-		}		
-	}
-	
 	
 	@Override
 	public int checkok() {
-		return this.re;
+		return this.vcnum;
 	}
-	
-	
-	
-	
 }
