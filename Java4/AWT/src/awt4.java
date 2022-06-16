@@ -3,7 +3,7 @@ import java.awt.event.*;
 
 public class awt4 {
 	public static void main(String[] args) {
-		//awt4_class.javaì—°ê³„
+		//awt4_class.java¿¬°è
 		decorate de = new decorate();
 		de.view();
 	}
@@ -13,7 +13,7 @@ class decorate extends awt4_class{
 	
 	public String result="";
 	public void btn_push(int c) {
-		/*ì‚¬ìš©ìê°€ ì…ë ¥í•œ ìˆ«ìë¥¼ ê¸°ì¤€ìœ¼ë¡œ êµ¬êµ¬ë‹¨ì„ ì‘ì„±*/
+		/*»ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ ¼ıÀÚ¸¦ ±âÁØÀ¸·Î ±¸±¸´ÜÀ» ÀÛ¼º*/
 		
 		int f;
 		

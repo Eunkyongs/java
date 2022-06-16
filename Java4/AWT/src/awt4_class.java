@@ -3,9 +3,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class awt4_class {
-//awt4.javaì—°ê³„
+//awt4.java¿¬°è
 	public void view() {
-		decorate de = new decorate(); // awt4.java ìì‹ class ë¡œë“œ
+		decorate de = new decorate(); // awt4.java ÀÚ½Ä class ·Îµå
 		TextField input = new TextField();
 		Frame f = new Frame();
 //		Label lb = new Label();
@@ -14,8 +14,8 @@ public class awt4_class {
 		f.setVisible(true);
 		f.setLayout(null);
 		
-		Button btn= new Button("ê³„ì‚°");
-		Button closebtn= new Button("ì¢…ë£Œ");
+		Button btn= new Button("°è»ê");
+		Button closebtn= new Button("Á¾·á");
 		lb.setBackground(Color.gray);
 
 		input.setBounds(50, 50, 100, 25);
@@ -34,12 +34,11 @@ public class awt4_class {
 			public void actionPerformed(ActionEvent e) {
 				try {
 				int c = Integer.parseInt(input.getText());
-				de.btn_push(c);// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ì„ btn_push ë©”ì†Œë“œë¡œ ì „ë‹¬
-				lb.setText(de.calls());// awt4.javaì— ìˆëŠ” getterë©”ì†Œë“œë¡œ ê°’ì„ ë°›ìŒ
-				
+				de.btn_push(c); // »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ªÀ» btn_push ¸Ş¼Òµå·Î Àü´Ş
+				lb.setText(de.calls()); // awt4.java¿¡ ÀÖ´Â getter¸Ş¼Òµå·Î °ªÀ» ¹ŞÀ½
 				}catch(Exception ee) {
-					lb.setText("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”");
-//					System.out.println("ìˆ«ìë§Œ ì…ë ¥í•˜ì„¸ìš”");
+					lb.setText("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
+//					System.out.println("¼ıÀÚ¸¸ ÀÔ·ÂÇÏ¼¼¿ä");
 				}
 				
 			}
