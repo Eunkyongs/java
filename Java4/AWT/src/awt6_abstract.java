@@ -2,12 +2,11 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
 
-//ÀÎÁõ¹øÈ£¹ß¼Û ½Ã½ºÅÛ - awt6¿Í ¿¬°á
+//ì¸ì¦ë²ˆí˜¸ë°œì†¡ ì‹œìŠ¤í…œ - awt6ì™€ ì—°ê²°
 public abstract class awt6_abstract {
 
 	public abstract int checkok(); //getter
 	public abstract void numcheck(int n);
-	public abstract void numcheck1(int n1);
 	
 	Frame f=new Frame(); //400*180
 	Button sendbt = null;  // 100*25
@@ -18,18 +17,18 @@ public abstract class awt6_abstract {
 	
 	
 	public void layout() {
-		//ÇÁ·¹ÀÓ
+		//í”„ë ˆì„
 		this.f.setBounds(200, 200, 400, 180);
 		this.f.setVisible(true);
 		this.f.setLayout(null);
 		
-		//¹öÆ°,ÅØ½ºÆ®ÇÊµå »ı¼º
-		this.sendbt = new Button("ÀÎÁõ¹øÈ£¹ß¼Û");
-		this.okbt = new Button("ÀÎÁõÈ®ÀÎ");
+		//ë²„íŠ¼,í…ìŠ¤íŠ¸í•„ë“œ ìƒì„±
+		this.sendbt = new Button("ì¸ì¦ë²ˆí˜¸ë°œì†¡");
+		this.okbt = new Button("ì¸ì¦í™•ì¸");
 		this.xbt = new Button("X");
 		this.num = new TextField();
 		
-		//À§Ä¡ ¼³Á¤
+		//ìœ„ì¹˜ ì„¤ì •
 		this.sendbt.setBounds(80, 50, 100, 25);
 		this.xbt.setBounds(300, 50, 30, 25);
 		this.num.setBounds(80, 90, 140, 25);
@@ -38,7 +37,7 @@ public abstract class awt6_abstract {
 		this.l.setBounds(80, 130, 250, 25);
 		
 		
-		//ÇÁ·¹ÀÓ¿¡ Ãß°¡
+		//í”„ë ˆì„ì— ì¶”ê°€
 		f.add(sendbt);
 		f.add(xbt);
 		f.add(num);
@@ -51,38 +50,40 @@ public abstract class awt6_abstract {
 	
 	public void bt_click() {
 
-		//ÀÎÁõ¹øÈ£¹ß¼Û¹öÆ°
+		//ì¸ì¦ë²ˆí˜¸ë°œì†¡ë²„íŠ¼
 		this.sendbt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				Random r = new Random();
 				int number= r.nextInt(10000)+1;
-				numcheck(number);
+				numcheck(number); // numcheck ë©”ì†Œë“œë¡œ ëœë¤ì¶”ì¶œëœ ì¸ì¦ë²ˆí˜¸ ë³´ëƒ„ 
 			}
 		});
 		
-		//ÀÎÁõÈ®ÀÎ¹öÆ°
+		//ì¸ì¦í™•ì¸ë²„íŠ¼
 		this.okbt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String userinput = awt6_abstract.this.num.getText();//ÀÔ·Â°ª ¹Ş¾Æ¿À±â
-				int usernum = Integer.parseInt(userinput); // ¹®ÀÚ·Î °¡Á®¿ÂÀÔ·Â°ª ¼ıÀÚº¯È¯
-				numcheck(usernum);//»ç¿ëÀÚ°¡ textfield¿¡ ÀÔ·ÂÇÑ°ª ¼ıÀÚ·Î º¯È¯ÇØ¼­ numcheck·Î³Ñ±è
+				try {
+					String userinput = awt6_abstract.this.num.getText();//ì…ë ¥ê°’ ë°›ì•„ì˜¤ê¸°
+					int nc = awt6_abstract.this.checkok(); //checkokì—ì„œ ë„˜ì–´ì˜¨ê°’ ncë¡œë°›ìŒ
+					int verinum = Integer.parseInt(userinput); // ë¬¸ìë¡œ ê°€ì ¸ì˜¨ì…ë ¥ê°’ ìˆ«ìë³€í™˜
+					System.out.println("ì…ë ¥í•œ ì¸ì¦ë²ˆí˜¸: "+verinum);
 					
-				int nc = checkok(); //checkok¿¡¼­ ³Ñ¾î¿Â°ª nc·Î¹ŞÀ½
-
-				if(nc!=0) {
-						l.setText("ÀÎÁõ¹øÈ£°¡ Æ²·È½À´Ï´Ù. È®ÀÎÇØÁÖ¼¼¿ä.");
-					}else if (nc==0) {
-						l.setText("ÀÎÁõ¹øÈ£°¡ È®ÀÎµÇ¾ú½À´Ï´Ù.");	
+					if(nc == verinum) {
+						l.setText("ì¸ì¦ë²ˆí˜¸ê°€ í™•ì¸ë˜ì—ˆìŠµë‹ˆë‹¤.");
 					}else {
-						l.setText("ÀÎÁõ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+						l.setText("ì¸ì¦ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤. í™•ì¸í•´ì£¼ì„¸ìš”.");
 					}
+				}catch(Exception er) {
+					l.setText("ì¸ì¦ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
+				}
+				
 			}
 		});
 		
 		
-		//X¹öÆ°
+		//Xë²„íŠ¼
 		this.xbt.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
