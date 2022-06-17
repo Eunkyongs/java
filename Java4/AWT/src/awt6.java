@@ -1,4 +1,4 @@
-//ì¸ì¦ë²ˆí˜¸ë°œì†¡ ì‹œìŠ¤í…œ - awt6_abstractì™€ ì—°ê²°
+//ÀÎÁõ¹øÈ£¹ß¼Û ½Ã½ºÅÛ - awt6_abstract¿Í ¿¬°á
 public class awt6 {
 
 	public static void main(String[] args) {
@@ -10,15 +10,27 @@ public class awt6 {
 }
 
 class awt6_handle extends awt6_abstract{
-	private int vcnum; //ëœë¤ìƒì„±ëœ ì¸ì¦ë²ˆí˜¸ ë„˜ì–´ì˜¨ê²ƒ 
+	private int vcnum; //·£´ı»ı¼ºµÈ ÀÎÁõ¹øÈ£ ³Ñ¾î¿Â°Í 
 	@Override
 	public void numcheck(int n) { 
-		this.vcnum=n;//ì¸ì¦ë²ˆí˜¸
-		System.out.println("ë°œì†¡ëœ ì¸ì¦ë²ˆí˜¸: "+n);//ì¸ì¦ë²ˆí˜¸ consoleì— ë³´ì´ê²Œ ì„¤ì •
+		this.vcnum=n;//ÀÎÁõ¹øÈ£
+		System.out.println("¹ß¼ÛµÈ ÀÎÁõ¹øÈ£: "+n);//ÀÎÁõ¹øÈ£ console¿¡ º¸ÀÌ°Ô ¼³Á¤
 	}
 	
 	@Override
 	public int checkok() {
 		return this.vcnum;
 	}
+	
+	@Override
+	public void setter(int usernum) {
+		
+	}
+	
+	@Override
+	public String getter() {
+
+		return null;
+	}
+	
 }
