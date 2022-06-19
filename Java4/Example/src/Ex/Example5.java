@@ -4,12 +4,33 @@ public class Example5 {
 
 	public static void main(String[] args) {
 		/*
-		 Æ¯°­¹®Á¦
-		 abstract¸¦ ÀÌ¿ëÇÏ¿© ±¸±¸´Ü 8´Ü °á°ú¸¦ ¸ğµÎ ´õÇÑ °á°ú°ªÀ» returnÀ» ¹Ş¾Æ ¸ŞÀÎ¿¡¼­ Ãâ·ÂµÇµµ·Ï ÇÕ´Ï´Ù. 
-		  
+		 íŠ¹ê°•ë¬¸ì œ
+		 abstractë¥¼ ì´ìš©í•˜ì—¬ êµ¬êµ¬ë‹¨ 8ë‹¨ ê²°ê³¼ë¥¼ ëª¨ë‘ ë”í•œ ê²°ê³¼ê°’ì„ returnì„ ë°›ì•„ ë©”ì¸ì—ì„œ ì¶œë ¥ë˜ë„ë¡ í•©ë‹ˆë‹¤. 
 		 */
-		
-		
+		gu g = new gu();
+		g.setter(8);
+		int result =g.getter();
+		System.out.printf("êµ¬êµ¬ë‹¨ 8ë‹¨ì˜ ê²°ê³¼ë¥¼ ëª¨ë‘ ë”í•˜ë©´ : %d",result);
 	}
+}
 
+abstract class gugu{
+	public abstract void setter(int a);//setter
+	public abstract int getter(); //getter
+}
+
+class gu extends gugu{
+	private int total; 
+	@Override
+	public void setter(int a) {
+		int w =1;
+		while(w<=9) {
+			this.total += a*w; 
+			w++;
+		}
+	}
+	@Override
+	public int getter() {
+		return this.total;
+	}
 }
