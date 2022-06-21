@@ -1,20 +1,23 @@
 package Ex;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Example7 {
 
 	public static void main(String[] args) {
 		/*
-		 ÀÀ¿ë¹®Á¦: {"hong","lee","park","kim","kang","jang","ha","sa"};
-		 abstract¸¦ »ç¿ëÇÏ¿© setter getter ¸¦ ¹«Á¶°Ç Àû¿ëÇÕ´Ï´Ù.
-		 ¸ŞÀÎ¿¡¼­´Â ÇØ´ç µ¥ÀÌÅÍ¸¦ ¿ÜºÎÅ¬·¡½º·Î Àü´ŞÇÏ°í ÃÖÁ¾ Á¤º¸°ª¸¸ ¹è¿­·Î »ı¼ºÇÏ¿© Ãâ·ÂµÇµµ·Ï ÇÕ´Ï´Ù. 
-		 ´Ü, setter¿¡¼­ ¹è¿­ µ¥ÀÌÅÍÁß 4ÀÚ¸® ¹Ì¸¸(3ÀÚ¸®±îÁö)¿¡ ÀÖ´Â ¹è¿­¸¸ »õ·Î »ı¼ºÇÏ¿© getter·Î °ªÀ» ¹Ş¾Æ ¸ŞÀÎ¿¡¼­ ¹è¿­·Î Ãâ·ÂÇÏ½Ã¿À.
+		 ì‘ìš©ë¬¸ì œ: {"hong","lee","park","kim","kang","jang","ha","sa"};
+		 abstractë¥¼ ì‚¬ìš©í•˜ì—¬ setter getter ë¥¼ ë¬´ì¡°ê±´ ì ìš©í•©ë‹ˆë‹¤.
+		 ë©”ì¸ì—ì„œëŠ” í•´ë‹¹ ë°ì´í„°ë¥¼ ì™¸ë¶€í´ë˜ìŠ¤ë¡œ ì „ë‹¬í•˜ê³  ìµœì¢… ì •ë³´ê°’ë§Œ ë°°ì—´ë¡œ ìƒì„±í•˜ì—¬ ì¶œë ¥ë˜ë„ë¡ í•©ë‹ˆë‹¤. 
+		 ë‹¨, setterì—ì„œ ë°°ì—´ ë°ì´í„°ì¤‘ 4ìë¦¬ ë¯¸ë§Œ(3ìë¦¬ê¹Œì§€)ì— ìˆëŠ” ë°°ì—´ë§Œ ìƒˆë¡œ ìƒì„±í•˜ì—¬ getterë¡œ ê°’ì„ ë°›ì•„ ë©”ì¸ì—ì„œ ë°°ì—´ë¡œ ì¶œë ¥í•˜ì‹œì˜¤.
 		 */
 		
 		String [] name = {"hong","lee","park","kim","kang","jang","ha","sa"};
 		cc c = new cc();
 		c.set(name);
+		ArrayList<String> re= c.get();
+		System.out.println(re);
 		
 	}
 
@@ -23,13 +26,13 @@ public class Example7 {
 abstract class pp{
 	
 	public abstract void set(String[] nd);
-	public abstract String[] get();
+	public abstract ArrayList<String> get();
 	
 }
 
 class cc extends pp{
-	String[] a =null;
-	ArrayList<String> ar = null;
+	String[] a;
+	ArrayList<String> ar;
 	@Override
 	public void set(String[] nd) {
 		int ea = nd.length;
@@ -40,15 +43,9 @@ class cc extends pp{
 				ar.add(nd[f]);
 			}
 		}
-		
-		int w = 0;
-		while(w<ar.size()) {
-		this.a[w] += ar.get(ea);
-		w++;
-		}
 	}
 	@Override
-	public String[] get() {
-		return this.a;
+	public ArrayList<String> get(){
+		return this.ar;
 	}
 }
