@@ -1,5 +1,6 @@
 package Ex;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 //interface
@@ -8,29 +9,41 @@ public class Example8 {
 	public static void main(String[] args) {
 		box2 bx = new box2();
 		bx.setter();
+		bx.db();
 		
-		/*´ÙÀ½ °á°úÃ³·³ °¢°¢ÀÇ ¹è¿­·Î ³ª´©¾î Áø °ÍÀ» ´ÙÀ½°ú °°ÀÌ ¹è¿­·Î Á¤·ÄÇØ ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.
-		 °á°úÃâ·Â: [È«±æµ¿=55, ÀÌ¼ø½Å=60, °­°¨Âù=80,À¯°ü¼ø=95]
+		/*ë‹¤ìŒ ê²°ê³¼ì²˜ëŸ¼ ê°ê°ì˜ ë°°ì—´ë¡œ ë‚˜ëˆ„ì–´ ì§„ ê²ƒì„ ë‹¤ìŒê³¼ ê°™ì´ ë°°ì—´ë¡œ ì •ë ¬í•´ ì£¼ì‹œê¸° ë°”ëë‹ˆë‹¤.
+		 ê²°ê³¼ì¶œë ¥: [í™ê¸¸ë™=55, ì´ìˆœì‹ =60, ê°•ê°ì°¬=80,ìœ ê´€ìˆœ=95]
 		 */
 		
 	}
 
 }
-//extends : abstract »ó¼Ó, ÀÏ¹İclass »ó¼Ó
-//implements : interface »ó¼Ó
+//extends : abstract ìƒì†, ì¼ë°˜class ìƒì†
+//implements : interface ìƒì†
 
 class box2 implements interface8,interface8_1{
+	
+//	private static final String User = null;
 //	String user = this.user;
+//	private int[] startnumber;
+	
+	private ArrayList<String> redata=null ;
 	@Override
 	public void db() {
-		
+		int w = 0;
+		this.redata = new ArrayList<>();
+		while(w<this.user.length) {
+			this.redata.add(this.user[w]+"="+this.startnumber[w]);
+			w++;
+		}
+		System.out.println(this.redata);
 	}
 	
 	@Override
 	public void setter() {
-//		this.user="È«±æµ¿"; //ÀÎÅÍÆäÀÌ½º¿¡¼­ ¼±¾ğÇÑ º¯¼ö¸¦ °­Á¦·Î º¯È¯ ÇÒ¼ö ¾øÀ½
-		System.out.println(Arrays.toString(this.user)); //
-		System.out.println(Arrays.toString(this.startnumber)); //this.±½Àº±Û¾¾´Â ÀÎÅÍÆäÀÌ½º¿¡ ÀÖ´Â °ª. º¯°æºÒ°¡
+//		this.user="í™ê¸¸ë™"; //ì¸í„°í˜ì´ìŠ¤ì—ì„œ ì„ ì–¸í•œ ë³€ìˆ˜ë¥¼ ê°•ì œë¡œ ë³€í™˜ í• ìˆ˜ ì—†ìŒ
+//		System.out.println(Arrays.toString(this.user)); //
+//		System.out.println(Arrays.toString(this.startnumber)); //this.êµµì€ê¸€ì”¨ëŠ” ì¸í„°í˜ì´ìŠ¤ì— ìˆëŠ” ê°’. ë³€ê²½ë¶ˆê°€
 	}
 	@Override
 	public String getter() {
