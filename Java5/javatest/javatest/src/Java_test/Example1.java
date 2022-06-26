@@ -25,6 +25,8 @@ public class Example1 {
 		l.load(); // 파일로딩파트
 		l.usernum(); // 숫자입력파트
 		l.compare(); // 비교파트
+		int result =l.get(); 
+		System.out.printf("로또결과 : 총 %d개의 번호를 맞추셨습니다!",result);
 	}
 
 }
@@ -33,6 +35,8 @@ class lotto {
 	FileReader fr=null;
 	ArrayList<Integer> u_num = new ArrayList<>(); //사용자 입력숫자 저장 배열
 	ArrayList<Integer> f_num = new ArrayList<>(); //파일숫자 저장 배열
+	private int count = 0;
+	
 	//파일로딩
 	public void load() throws IOException {
 		try {
@@ -45,13 +49,12 @@ class lotto {
 			w++;
 		}
 		br.close();
-		System.out.println(this.f_num); // 파일에 저장된 숫자배열 확인
+//		System.out.println(this.f_num); // 파일에 저장된 숫자배열 확인
 		}
 		catch(Exception e) {
 			System.out.println(e);
 		}
 	}
-	
 	
 	//사용자 숫자 입력파트
 	public void usernum() {
@@ -63,22 +66,21 @@ class lotto {
 			this.u_num.add(w,usernum);
 			w++;
 		}
-		System.out.println("사용자 입력 숫자:"+this.u_num);//입력배열확인
+//		System.out.println("사용자 입력 숫자:"+this.u_num);//입력배열확인
 	}
 	
 	//파일로드값 사용자입력값 비교
 	public void compare() {
-		
-	int count = 0;	
-		
-	for(int f =0; f <u_num.size(); f++) {
-		for(int ff =0; ff<f_num.size(); ff++) {
-			if(u_num.get(f) == f_num.get(ff)) {
-				count++;
+		for(int f =0; f <u_num.size(); f++) {
+			for(int ff =0; ff<f_num.size(); ff++) {
+				if(u_num.get(f) == f_num.get(ff)) {
+					this.count++;
+				}
 			}
 		}
 	}
-		System.out.printf("로또결과 : 총 %d개의 번호를 맞추셨습니다!",count);
+	//메인으로 리턴
+	public int get() {
+		return this.count;
 	}
-	
 }
