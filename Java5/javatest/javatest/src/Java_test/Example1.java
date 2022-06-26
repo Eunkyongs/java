@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Example1 {
@@ -12,37 +13,39 @@ public class Example1 {
 	public static void main(String[] args) throws IOException {
 		
 		/*
-		 ÀÀ¿ë¹®Á¦: »ç¿ëÀÚ°¡ 6°³ÀÇ ¼ıÀÚ¸¦ ÀÔ·ÂÇÏ´Â ·Î¶Ç ÇÁ·Î±×·¥ ÀÔ´Ï´Ù.
-		 ÇÁ·Î¼¼¼­ ½ÃÀÛ½Ã "¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä: "¶ó°í Ãâ·Â. ÃÑ 6¹øÀÇ ¼ıÀÚ¸¦ ÀÔ·Â¹Ş°Ô µË´Ï´Ù.
-		 ±×¸®°í lotto.txt °á°ú¸¦ °¡Áø ÆÄÀÏÀ» ·ÎµåÇÏ¿© »ç¿ëÀÚ°¡ ÀÔ·ÂÇÑ °ª°ú °á°ú¸¦ ºñ±³ÇÏ¿© ¸î°³¸¦ ¸ÂÃè´ÂÁö °ËÅäÇÏ´Â ÇÁ·Î±×·¥ ÄÚµå¸¦ ÀÛ¼ºÇÏ½Ã¿À.
+		 ì‘ìš©ë¬¸ì œ: ì‚¬ìš©ìê°€ 6ê°œì˜ ìˆ«ìë¥¼ ì…ë ¥í•˜ëŠ” ë¡œë˜ í”„ë¡œê·¸ë¨ ì…ë‹ˆë‹¤.
+		 í”„ë¡œì„¸ì„œ ì‹œì‘ì‹œ "ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”: "ë¼ê³  ì¶œë ¥. ì´ 6ë²ˆì˜ ìˆ«ìë¥¼ ì…ë ¥ë°›ê²Œ ë©ë‹ˆë‹¤.
+		 ê·¸ë¦¬ê³  lotto.txt ê²°ê³¼ë¥¼ ê°€ì§„ íŒŒì¼ì„ ë¡œë“œí•˜ì—¬ ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê°’ê³¼ ê²°ê³¼ë¥¼ ë¹„êµí•˜ì—¬ ëª‡ê°œë¥¼ ë§ì·„ëŠ”ì§€ ê²€í† í•˜ëŠ” í”„ë¡œê·¸ë¨ ì½”ë“œë¥¼ ì‘ì„±í•˜ì‹œì˜¤.
 		 
-		 [°á°ú¿¹½Ã]
-		 ·Î¶Ç °á°ú :  ÃÑ 3°³ÀÇ ¹øÈ£¸¦ ¸ÂÃß¼Ì½À´Ï´Ù.!
+		 [ê²°ê³¼ì˜ˆì‹œ]
+		 ë¡œë˜ ê²°ê³¼ :  ì´ 3ê°œì˜ ë²ˆí˜¸ë¥¼ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤.!
 		 */
 		
 		lotto l = new lotto();
-		l.load(); // ÆÄÀÏ·ÎµùÆÄÆ®
-		l.usernum(); // ¼ıÀÚÀÔ·ÂÆÄÆ®
-		l.compare(); // ºñ±³ÆÄÆ®
+		l.load(); // íŒŒì¼ë¡œë”©íŒŒíŠ¸
+		l.usernum(); // ìˆ«ìì…ë ¥íŒŒíŠ¸
+		l.compare(); // ë¹„êµíŒŒíŠ¸
 	}
 
 }
 
 class lotto {
 	FileReader fr=null;
-	ArrayList<Integer> u_num = new ArrayList<>(); //»ç¿ëÀÚ ÀÔ·Â¼ıÀÚ ÀúÀå ¹è¿­
-	ArrayList<Integer> f_num = new ArrayList<>(); //ÆÄÀÏ¼ıÀÚ ÀúÀå ¹è¿­
-	//ÆÄÀÏ·Îµù
+	ArrayList<Integer> u_num = new ArrayList<>(); //ì‚¬ìš©ì ì…ë ¥ìˆ«ì ì €ì¥ ë°°ì—´
+	ArrayList<Integer> f_num = new ArrayList<>(); //íŒŒì¼ìˆ«ì ì €ì¥ ë°°ì—´
+	//íŒŒì¼ë¡œë”©
 	public void load() throws IOException {
 		try {
-		this.fr = new FileReader("C:\\javatest\\javatest\\src\\Java_test\\lotto.txt",Charset.forName("UTF8"));
+		this.fr = new FileReader("C:\\EK\\EK\\src\\Java_test\\lotto.txt",Charset.forName("UTF8"));
 		BufferedReader br = new BufferedReader(fr);
 		
-		while(br.readLine() != null) { //br.readLine() != null 
-			this.f_num.add(Integer.valueOf(br.readLine()));
+		int w =0;
+		while(w<6) { //br.readLine() != null 
+			this.f_num.add(Integer.parseInt(br.readLine()));
+			w++;
 		}
 		br.close();
-		System.out.println(this.f_num);
+		System.out.println(this.f_num); // íŒŒì¼ì— ì €ì¥ëœ ìˆ«ìë°°ì—´ í™•ì¸
 		}
 		catch(Exception e) {
 			System.out.println(e);
@@ -50,36 +53,32 @@ class lotto {
 	}
 	
 	
-	//»ç¿ëÀÚ ¼ıÀÚ ÀÔ·ÂÆÄÆ®
+	//ì‚¬ìš©ì ìˆ«ì ì…ë ¥íŒŒíŠ¸
 	public void usernum() {
 		Scanner scan = new Scanner(System.in);
 		int w = 0;
 		while(w<6) {
-			System.out.println("¼ıÀÚ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä :");
+			System.out.println("ìˆ«ìë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš” :");
 			int usernum = scan.nextInt();
 			this.u_num.add(w,usernum);
 			w++;
 		}
-		System.out.println("»ç¿ëÀÚ ÀÔ·Â ¼ıÀÚ:"+this.u_num);//ÀÔ·Â¹è¿­È®ÀÎ
+		System.out.println("ì‚¬ìš©ì ì…ë ¥ ìˆ«ì:"+this.u_num);//ì…ë ¥ë°°ì—´í™•ì¸
 	}
 	
-	//ÆÄÀÏ·Îµå°ª »ç¿ëÀÚÀÔ·Â°ª ºñ±³
+	//íŒŒì¼ë¡œë“œê°’ ì‚¬ìš©ìì…ë ¥ê°’ ë¹„êµ
 	public void compare() {
 		
-		int w =0 ;
-		int count =0;
-		while(w<this.u_num.size()) {
-			if(this.f_num.get(0) ==  this.u_num.get(w)) {
-				
+	int count = 0;	
+		
+	for(int f =0; f <u_num.size(); f++) {
+		for(int ff =0; ff<f_num.size(); ff++) {
+			if(u_num.get(f) == f_num.get(ff)) {
 				count++;
 			}
-			w++;
 		}
-		
-		System.out.printf("·Î¶Ç°á°ú : ÃÑ %d°³ÀÇ ¹øÈ£¸¦ ¸ÂÃß¼Ì½À´Ï´Ù!",count);
-		
-
-		
+	}
+		System.out.printf("ë¡œë˜ê²°ê³¼ : ì´ %dê°œì˜ ë²ˆí˜¸ë¥¼ ë§ì¶”ì…¨ìŠµë‹ˆë‹¤!",count);
 	}
 	
 }
