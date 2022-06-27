@@ -1,37 +1,37 @@
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 
-//crawling »ç¿ë
+//crawling ì‚¬ìš©
 //https://webmail.lh.or.kr/login
 public class net3 {
 
 	public static void main(String[] args) throws Exception{
-		String url = "https://webmail.lh.or.kr/login";
+		String url = "http://www.jogunshop.com/index.html";
 		URL urls = new URL(url);
 		URLConnection con = urls.openConnection();
 		int size = con.getContentLength();
 		
-		System.out.println(urls.getProtocol()); //ÇÁ·ÎÅäÄİ http or https Ã¼Å© 
-		System.out.println(urls.getPort()); //Æ÷Æ®¹øÈ£ ÀÔ·Â¾ÈµÇ¸é -1Ãâ·Â 
-		System.out.println(urls.getFile()); //Á¢¼ÓÆÄÀÏ¸í /login
+		System.out.println(urls.getProtocol()); //í”„ë¡œí† ì½œ http or https ì²´í¬ 
+		System.out.println(urls.getPort()); //í¬íŠ¸ë²ˆí˜¸ ì…ë ¥ì•ˆë˜ë©´ -1ì¶œë ¥ 
+		System.out.println(urls.getFile()); //ì ‘ì†íŒŒì¼ëª… /login
 		
 		InputStream is = urls.openStream();
 		InputStreamReader isr = new InputStreamReader(is);
-		BufferedReader br = new BufferedReader(isr);//sysoutÀ¸·Î Ãâ·Â ½Ã, ¹®¼­´Ï±î readLine»ç¿ëÇØ¾ßÇÔ 
-		byte html[] = new byte[1024];
-		FileOutputStream fs = new FileOutputStream("login.html");
+		BufferedReader br = new BufferedReader(isr);//sysoutìœ¼ë¡œ ì¶œë ¥ ì‹œ, ë¬¸ì„œë‹ˆê¹Œ readLineì‚¬ìš©í•´ì•¼í•¨ 
+		FileWriter write = new FileWriter("login.html");
+		
+		
+//		FileOutputStream fs = new FileOutputStream("login.html");
+//		byte html[] = new byte[1024];
 		String str="";
 		while((str=br.readLine()) != null) {
-			fs.write(html,0,size);
+			write.write(str);
 		}
 		br.close();
-		fs.flush();
-		fs.close();
-		
 	}
-
 }
