@@ -2,36 +2,49 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 /*
- ¼÷Á¦ : ArrayList ¸¦ ¹«Á¶°Ç ÀÌ¿ëÇÏ¿© °á°ú°ªÀ» Ãâ·ÂµÇµµ·Ï ÇÕ´Ï´Ù.
- ¿ø½Ãµ¥ÀÌÅÍ => {"red","green","blue","pink","orange","black","white","hotpink","gray"}
- ÇØ´ç µ¥ÀÌÅÍ »ö»ó °ªÁß 6ÀÚ ¹Ì¸¸ÀÇ »ö»óÀº ¸ğµÎ »èÁ¦ ÈÄ °á°ú ¹è¿­°ªÀ¸·Î »ı¼ºÇÏ½Ã¿À.
+ ìˆ™ì œ : ArrayList ë¥¼ ë¬´ì¡°ê±´ ì´ìš©í•˜ì—¬ ê²°ê³¼ê°’ì„ ì¶œë ¥ë˜ë„ë¡ í•©ë‹ˆë‹¤.
+ ì›ì‹œë°ì´í„° => {"red","green","blue","pink","orange","black","white","hotpink","gray"}
+ í•´ë‹¹ ë°ì´í„° ìƒ‰ìƒ ê°’ì¤‘ 6ì ë¯¸ë§Œì˜ ìƒ‰ìƒì€ ëª¨ë‘ ì‚­ì œ í›„ ê²°ê³¼ ë°°ì—´ê°’ìœ¼ë¡œ ìƒì„±í•˜ì‹œì˜¤.
  
- °á°ú: [orange, hotpink]
+ ê²°ê³¼: [orange, hotpink]
  */
 //ArrayList
 public class example1 {
 
 	public static void main(String[] args) {
 		
+		String [] colors =  {"red","green","blue","pink","orange","black","white","hotpink","gray"};
+		ArrayList<String> new_color = new ArrayList<>();
+		
+		int w  = 0;
+		do {
+			if(colors[w].length()>5) {
+				new_color.add(color[w]);
+			}
+			w++;
+		}while(w<colors.length);
+
+		System.out.println(new_color);
+		
 		String color[] = {"red","blue","green"};
 		ArrayList<String> al = new ArrayList<>(Arrays.asList(color));
-		System.out.println(al); // arraylist Ãâ·Â½Ã¿£ arrays.tostring »ç¿ëX
+		System.out.println(al); // arraylist ì¶œë ¥ì‹œì—” arrays.tostring ì‚¬ìš©X
 		al.remove(1);
 		System.out.println(al);
 		
 		int number[] = {1,2,3,4}; 
 		Integer number2[] = {number[0],number[1],number[2],number[3]};
-		ArrayList<Integer> al2 = new ArrayList<>(Arrays.asList(number2)); // aslist¿¡ int¿ø½Ã¹è¿­À» ³ÖÀ¸·Á¸é ¿ø½Ã¹è¿­À» Integer·Î ¼±¾ğÇØ¾ß ÇÔ. ¾Æ´Ï¸é Integer·Î º¯È¯ÇØ¼­ ³Ö¾î¾ßÇÔ.
+		ArrayList<Integer> al2 = new ArrayList<>(Arrays.asList(number2)); // aslistì— intì›ì‹œë°°ì—´ì„ ë„£ìœ¼ë ¤ë©´ ì›ì‹œë°°ì—´ì„ Integerë¡œ ì„ ì–¸í•´ì•¼ í•¨. ì•„ë‹ˆë©´ Integerë¡œ ë³€í™˜í•´ì„œ ë„£ì–´ì•¼í•¨.
 		System.out.println(al2);
 		
-		/*¸ÁÇÑÄÚµå¤»¤»¤»*/
+		/*ë§í•œì½”ë“œã…‹ã…‹ã…‹*/
 //		int abc[] = {3,4,7,9,10};
-//		List<Object> al3 = new ArrayList<>(Arrays.asList(abc)); // List <Object> : ÃÖ»óÀ§ ¸ğµç ÀÚ·áÇü ´Ù ¹ŞÀ» ¼ö ÀÖÀ½
-		//Object : Ãâ·Â½Ã ¹è¿­ÀÌ Á¦´ë·Î ³ª¿ÀÁö ¾ÊÀ½. Object´Â ¹è¿­ ÀüÃ¼¸¦ 1°³ÀÇ °´Ã¼·Î ÀÎ½ÄÇÏ±â¶§¹®.   
+//		List<Object> al3 = new ArrayList<>(Arrays.asList(abc)); // List <Object> : ìµœìƒìœ„ ëª¨ë“  ìë£Œí˜• ë‹¤ ë°›ì„ ìˆ˜ ìˆìŒ
+		//Object : ì¶œë ¥ì‹œ ë°°ì—´ì´ ì œëŒ€ë¡œ ë‚˜ì˜¤ì§€ ì•ŠìŒ. ObjectëŠ” ë°°ì—´ ì „ì²´ë¥¼ 1ê°œì˜ ê°ì²´ë¡œ ì¸ì‹í•˜ê¸°ë•Œë¬¸.   
 //		System.out.println(al3.get(0));
-//		Object test = al3.get(0); // int -> Object·Î Àû¿ë½Ã Àç ·ÎµåÇÏ±â°¡ Èûµë
+//		Object test = al3.get(0); // int -> Objectë¡œ ì ìš©ì‹œ ì¬ ë¡œë“œí•˜ê¸°ê°€ í˜ë“¬
 
-		/*Á¤½ÄÄÚµå*/ 
+		/*ì •ì‹ì½”ë“œ*/ 
 		
 		int abc[] = {3,4,7,9,10};
 		List al3 = new ArrayList<>();
@@ -43,7 +56,7 @@ public class example1 {
 		int num = Integer.parseInt(al3.get(1).toString());
 		System.out.println(num);
 		
-		List al4 = new ArrayList<>(); // ObjectÇü ºó¹è¿­
+		List al4 = new ArrayList<>(); // Objectí˜• ë¹ˆë°°ì—´
 		
 		al4.add("A");
 		al4.add(10);
