@@ -12,7 +12,7 @@ import java.util.List;
 public class example1 {
 
 	public static void main(String[] args) {
-		
+		//숙제
 		String [] colors =  {"red","green","blue","pink","orange","black","white","hotpink","gray"};
 		ArrayList<String> new_color = new ArrayList<>();
 		
@@ -23,8 +23,9 @@ public class example1 {
 			}
 			w++;
 		}while(w<colors.length);
-
 		System.out.println(new_color);
+		
+		
 		
 		String color[] = {"red","blue","green"};
 		ArrayList<String> al = new ArrayList<>(Arrays.asList(color));
