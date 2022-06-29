@@ -8,46 +8,54 @@ import java.util.Scanner;
 public class chat_server {
 	
 	public static void main(String[] args) {
-		int port = 9090;
-		String mid = null;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("서버에서 사용할 아이디를 입력해주세요: ");
-		mid=sc.next(); // 서버 담당자 아이디
-//			sc.close();//※주의!! 여기서 스캐너 종료하면 아래쪽 코드 작동이안됨
+		chat ch = new chat();
+		ch.chat_server();
+	}
 
+}
+
+class chat{
+	private int port = 8009;
+	ServerSocket sk =null;
+	Socket so = null; //
+	Scanner sc = null;
+	InputStream is = null;
+	OutputStream os = null;
+	String mid = null;
+	String msg = null; 
+	String cmsg = null;
+	public void chat_server() {
 		try {
-			ServerSocket server_sock =new ServerSocket(port);	//서버소켓은 필드에 올리면 인식못하니 필드에 올리지않도록 조심!!
-			System.out.println("대기중...");
-			Socket sk = server_sock.accept();
+			this.sk = new ServerSocket(this.port);
+			this.sc = new Scanner(System.in);
+			System.out.println("아이디를 생성하세요 : ");
+			this.mid = sc.next();
+			System.out.println("채팅방 개설 되었습니다.");
 			
 			while(true) {
-			
-			InputStream is = sk.getInputStream();
-			OutputStream os=sk.getOutputStream();
-			
-			byte []data = new byte[9999];//1024 입력시 kb용량이 작아서 에러발생할수있음
-			int arr = is.read(data);
-			String message = new String (data,0,arr);
-			System.out.println(message);
-			
-			Scanner sc2 = new Scanner(System.in);
-			System.out.println("내용을 입력해 주세요: ");
-			String msg = "["+ mid +"]:"+sc2.nextLine();
-			
-			os.write(msg.getBytes());
-			os.flush();
-			
-			is.close();
-			os.close();
-			sc.close();
-			
+				this.so = sk.accept();
+				this.is = so.getInputStream();
+				this.os = so.getOutputStream();
+				
+				byte data [] = new byte [1024];
+				int n = this.is.read(data);
+				this.msg = new String(data, 0, n);
+				System.out.println(this.msg);
+				
+				this.sc = new Scanner(System.in);
+				System.out.println("내용을 입력해 주세요 : ");
+				this.cmsg = "["+this.mid + "]:"+this.sc.nextLine().intern();
+				this.os.write(this.cmsg.getBytes());
+				this.os.flush();
+				
+
+				
 			}
+			
+			
 		}catch(Exception e) {
 			System.out.println(e);
 		}
-		
-		
-		
 	}
-
+	
 }
