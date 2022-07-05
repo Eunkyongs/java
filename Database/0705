@@ -1,0 +1,40 @@
+자료 보고 직접 테이블 만들기
+http://mekeyace.dothome.co.kr/pay.txt >자료
+
+create table pay(
+pay_no int(8) not null auto_increment,
+pay_place varchar(100) not null,
+pay_code varchar(250) not null,
+pay_time datetime not null default '0001-01-01 01:00:00',
+pay_card varchar(50) not null,
+pay_monthly char(30) not null,
+pay_cost bigint not null,
+pay_recipt char(5) not null,
+primary key(pay_no)
+);
+
+create table pay(
+pidx int(8) not null auto_increment,
+parea char(100) not null,
+pno varchar(13) not null,
+pdate datetime not null default '0001-01-01 01:00:00',
+pcard char(100) not null,
+pm char(40) not null,
+money int(7) not null,
+presult enum('Y', 'N') not null default 'Y',
+primary key(pidx)
+);
+
+
+테이블 정렬
+오름차순 : select * from tablename order by fieldname asc;
+내림차순 : select * from tablename order by fieldname desc;
+order by - 정렬기준
+
+group by 필드명 : 해당 필드값이 같은 것 끼리 모아서 추출
+
+해당 같은 이름을 가진 그룹별로 각각 값을 합친 데이터를 출력하는 sql 명령어
+select 필드명, sum(필드명) as 가상의 필드명 from 테이블명 group by 필드명;
+
+
+
